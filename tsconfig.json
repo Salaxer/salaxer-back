@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2022"], // ES2020 in earlier versions
+    "module": "ES2022", //ESNext 
+    "moduleResolution": "Node",
+    "target": "ES2022", // ES2020 in earlier versions
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+    }
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": true
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist"],
+}
