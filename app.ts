@@ -16,13 +16,15 @@ const app:Express = express();
 const __filename = fileURLToPath(import.meta.url);
 
 const __dirname = path.dirname(__filename);
-const allowedOrigins = [''];
-if (process.env.URL_CLIENT) {
-  allowedOrigins.push(process.env.URL_CLIENT);
-}
+const allowedOrigins = [process.env.URL_CLIENT || "https://salaxer.com/"];
+
+
+console.log(process.env.URL_CLIENT);
+console.log(allowedOrigins);
 
 const options: cors.CorsOptions = {
   origin: allowedOrigins,
+  credentials: true,
   methods: ['POST'],
 };
 

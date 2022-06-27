@@ -6,6 +6,9 @@ import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
 import initFirebase from '../firebase/firebase.js';
 
+import dot from 'dotenv'
+dot.config();
+
 initFirebase()
 
 const db = getFirestore(getApp());
@@ -28,6 +31,9 @@ const sendMessage = async (email:string, message:string, name:string) =>{
 
 /* GET users listing. */
 router.post('/', async function(req, res, next) {
+  res.header({
+    "Access-Control-Allow-Origin": process.env.URL_CLIENT || "https://salaxer.com/",
+  })
   if (!req.body.email || !req.body.message || !req.body.name) {
     return res.status(400).json({
       error: 'Faltan campos',
