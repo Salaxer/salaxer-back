@@ -31,9 +31,6 @@ const sendMessage = async (email:string, message:string, name:string) =>{
 
 /* GET users listing. */
 router.post('/', async function(req, res, next) {
-  res.header({
-    "Access-Control-Allow-Origin": process.env.URL_CLIENT || "https://salaxer.com/",
-  })
   if (!req.body.email || !req.body.message || !req.body.name) {
     return res.status(400).json({
       error: 'Faltan campos',
