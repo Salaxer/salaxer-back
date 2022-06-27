@@ -14,7 +14,6 @@ dot.config();
 
 const app:Express = express();
 const __filename = fileURLToPath(import.meta.url);
-console.log(process.env.URL_CLIENT);
 
 const __dirname = path.dirname(__filename);
 const allowedOrigins = [''];
