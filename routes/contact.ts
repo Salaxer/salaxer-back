@@ -48,6 +48,7 @@ router.post('/', async function(req, res, next) {
       message: "este es un error interno del servidor, porfavor espere un momento"
     })
   }
+  console.log(resolve);
   res.status(200).json({
     status: 200,
     body: {

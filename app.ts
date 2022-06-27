@@ -20,12 +20,11 @@ const allowedOrigins = [process.env.URL_CLIENT || "https://salaxer.com/"];
 
 
 console.log(process.env.URL_CLIENT);
-console.log(allowedOrigins);
 
 const options: cors.CorsOptions = {
   origin: allowedOrigins,
   credentials: true,
-  methods: ['POST'],
+  methods: ['POST', 'OPTIONS', 'GET'],
 };
 
 app.use(cors(options));
