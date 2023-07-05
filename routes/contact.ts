@@ -7,6 +7,7 @@ import { getFirestore } from "firebase/firestore";
 import initFirebase from '../firebase/firebase.js';
 
 import dot from 'dotenv'
+import templateHTML from './templateHTML.js';
 dot.config();
 
 initFirebase()
@@ -22,6 +23,13 @@ const sendMessage = async (email:string, message:string, name:string) =>{
       message,
       name,
       date: Timestamp.fromDate(date),
+    });
+    resolve = await addDoc(collection(db, "email"), {
+      to: email,
+      message: {
+        html: templateHTML(name),
+        subject: "solicitud de servicios - salaxer"
+      }
     });
   } catch (e) {
     error = e;
@@ -52,7 +60,7 @@ router.post('/', async function(req, res, next) {
       id: resolve?.id,
       ...req.body
     },
-    message: "se ha agregado con exito"
+    message: "Se recivio con exito su mensaje"
   })
 });
 

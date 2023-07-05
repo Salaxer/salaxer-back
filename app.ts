@@ -7,6 +7,7 @@ import logger from 'morgan';
 import indexRouter from './routes/index.js';
 import usersRouter from './routes/users.js';
 import contactRouter from './routes/contact.js'
+import worksRouter from './routes/works.js'
 import { fileURLToPath } from 'url';
 import cors from 'cors'
 import dot from 'dotenv'
@@ -16,7 +17,7 @@ const app:Express = express();
 const __filename = fileURLToPath(import.meta.url);
 
 const __dirname = path.dirname(__filename);
-const allowedOrigins = [process.env.URL_CLIENT || "https://salaxer.com/"];
+const allowedOrigins = [process.env.URL_CLIENT || "https://salaxer.com"]; 
 
 
 console.log(process.env.URL_CLIENT);
@@ -38,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/contact', contactRouter);
+app.use('/works', worksRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -56,7 +58,7 @@ app.use(function(err:any, req:any, res:any, next:any) {
     error: err
 });
 });
-app.listen(5000, function () {
+app.listen(3001, function () {
   console.log('Node server is running..');
 });
 export default app;
