@@ -10,11 +10,11 @@ dot.config();
 const firebaseConfig = {
   apiKey: process.env.EXPRESS_FIREBASE_API_KEY,
   authDomain: process.env.EXPRESS_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env .EXPRESS_FIREBASE_PROJECT_ID,
-  storageBucket: process.env .EXPRESS_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env .EXPRESS_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env .EXPRESS_FIREBASE_APP_ID,
-  measurementId: process.env .EXPRESS_FIREBASE_MEASUREMENT_ID 
+  projectId: process.env.EXPRESS_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.EXPRESS_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.EXPRESS_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.EXPRESS_FIREBASE_APP_ID,
+  measurementId: process.env.EXPRESS_FIREBASE_MEASUREMENT_ID 
 };
 
 

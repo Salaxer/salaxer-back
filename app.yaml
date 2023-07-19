@@ -1,0 +1,13 @@
+runtime: nodejs20
+
+handlers:
+# - url: /dist
+#   static_dir: static  # Ruta a los archivos estáticos como CSS, JS, etc.
+
+- url: /.*
+  script: auto  # Para el enrutamiento dinámico a la aplicación principal
+
+  # Especifica el directorio de origen para la aplicación
+# Asegúrate de que la ruta sea relativa al archivo app.yaml
+# Si el directorio "dist" está dentro de "salaxer-back", usa simplemente "dist"
+# Si está en otro nivel, debes ajustar la ruta en consecuencia.

@@ -28,7 +28,7 @@ const sendMessage = async (email:string, message:string, name:string) =>{
       to: email,
       message: {
         html: templateHTML(name),
-        subject: "solicitud de servicios - salaxer"
+        subject: "Gracias por contactarnos"
       }
     });
   } catch (e) {
