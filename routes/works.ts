@@ -23,6 +23,7 @@ router.get('/', async function(req, res, next) {
             data.push({...doc.data(), id:doc.id,})
         });
         res.status(200).json(data);
+        console.log("Response sent");
     } catch (error) {
         res.status(401).json({
           error
